@@ -2,8 +2,8 @@
 
 ## Integrantes
 
-Fermin Ares Ricón(faresricon@alumnos.exa.unicen.edu.ar)
-Antonella Pedini(apedini@alumnos.exa.unicen.edu.ar)
+- Fermin Ares Ricón(faresricon@alumnos.exa.unicen.edu.ar)
+- Antonella Pedini(apedini@alumnos.exa.unicen.edu.ar)
 
 ## Temática
 Galeria de arte digital, obras de arte digitalizadas e información de los artias. 
