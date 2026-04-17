@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD
 -- Tiempo de generación: 14-04-2026 a las 20:23:19
+=======
+-- Tiempo de generación: 18-04-2026 a las 00:36:00
+>>>>>>> master
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +22,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+<<<<<<< HEAD
 -- Base de datos: `galeria de arte digital`
+=======
+-- Base de datos: `galeria_de_arte_digital`
+>>>>>>> master
 --
 
 -- --------------------------------------------------------
@@ -52,10 +60,17 @@ INSERT INTO `artista` (`id_artista`, `nombre_completo`, `fecha_nacimiento`, `fec
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `obra_de_arte`
 --
 
 CREATE TABLE `obra_de_arte` (
+=======
+-- Estructura de tabla para la tabla `obras`
+--
+
+CREATE TABLE `obras` (
+>>>>>>> master
   `id_obra` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `año_creacion` int(4) NOT NULL,
@@ -68,10 +83,17 @@ CREATE TABLE `obra_de_arte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
+<<<<<<< HEAD
 -- Volcado de datos para la tabla `obra_de_arte`
 --
 
 INSERT INTO `obra_de_arte` (`id_obra`, `nombre`, `año_creacion`, `tecnica`, `soporte`, `corriente_artistica`, `descripcion`, `imagen`, `id_artista`) VALUES
+=======
+-- Volcado de datos para la tabla `obras`
+--
+
+INSERT INTO `obras` (`id_obra`, `nombre`, `año_creacion`, `tecnica`, `soporte`, `corriente_artistica`, `descripcion`, `imagen`, `id_artista`) VALUES
+>>>>>>> master
 (3, 'Impresión, sol naciente', 1872, 'Óleo', 'Lienzo', 'Impresionismo', 'La obra muestra un puerto en Le Havre, la ciudad natal de Monet. Con un énfasis en la luz y el color, la pieza retrata los efectos de un amanecer nebuloso en el agua. Las siluetas de dos botes de remos aparecen en primer plano, mientras que el fondo se compone de las difusas siluetas de barcos y chimeneas industriales.', 'C:\\xampp\\htdocs\\web2\\TPE1\\img\\impresion_sol_naciente_MONET.png', 1),
 (4, 'Autoretrato con boina', 1886, 'Óleo', 'Lienzo', 'Impresionismo', 'Autorretrato serio y austero. Monet se muestra con boina oscura, barba blanca y mirada directa. Pinceladas sueltas capturan luz y carácter con economía expresiva.', 'C:\\xampp\\htdocs\\web2\\TPE1\\img\\autoretrato-con-boina-MONET.png', 1),
 (5, 'El puente japonés', 1899, 'Óleo', 'Lienzo', 'Impresionismo', 'Además de capturar la sencilla de elegancia de la estructura, la pieza es una celebración del follaje de su jardín, que incluye sauces llorones, lavanda y nenúfares.', 'C:\\xampp\\htdocs\\web2\\TPE1\\img\\el_puente_japones_MONET.png', 1),
@@ -94,9 +116,15 @@ ALTER TABLE `artista`
   ADD PRIMARY KEY (`id_artista`);
 
 --
+<<<<<<< HEAD
 -- Indices de la tabla `obra_de_arte`
 --
 ALTER TABLE `obra_de_arte`
+=======
+-- Indices de la tabla `obras`
+--
+ALTER TABLE `obras`
+>>>>>>> master
   ADD PRIMARY KEY (`id_obra`),
   ADD KEY `id_artista` (`id_artista`);
 
@@ -111,9 +139,15 @@ ALTER TABLE `artista`
   MODIFY `id_artista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `obra_de_arte`
 --
 ALTER TABLE `obra_de_arte`
+=======
+-- AUTO_INCREMENT de la tabla `obras`
+--
+ALTER TABLE `obras`
+>>>>>>> master
   MODIFY `id_obra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
@@ -121,10 +155,17 @@ ALTER TABLE `obra_de_arte`
 --
 
 --
+<<<<<<< HEAD
 -- Filtros para la tabla `obra_de_arte`
 --
 ALTER TABLE `obra_de_arte`
   ADD CONSTRAINT `obra_de_arte_ibfk_1` FOREIGN KEY (`id_artista`) REFERENCES `artista` (`id_artista`);
+=======
+-- Filtros para la tabla `obras`
+--
+ALTER TABLE `obras`
+  ADD CONSTRAINT `obras_ibfk_1` FOREIGN KEY (`id_artista`) REFERENCES `artista` (`id_artista`);
+>>>>>>> master
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
