@@ -36,7 +36,7 @@ switch ($params[0]) {
         break;
     case 'artista':
         $name = $params[1] ?? null;
-        $ArtistaController = new ArtistaController();
+        $ArtistaController = new ArtistasController();
         $ArtistaController->mostrarArtista($name);
         break;
     default:

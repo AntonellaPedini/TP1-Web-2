@@ -2,20 +2,23 @@
 //require_once __DIR__ . '/mock_data.php';
 
 class ArtistasModel {
+    private $db;
+
+    public function __construct (){
+        $this->db = new PDO ('mysql:host=localhost;dbname=galeria_de_arte_digital;charset=utf8', 'root', '');
+    }
+
     public function getAll() {
-        global $mockArtista;
-        return $mockArtista;
+        $query = $this->db->prepare ('SELECT * FROM artista') ;
+        $query->execute ();
+        $artistas = $query->fetchAll (PDO::FETCH_OBJ) ;
+        return $artistas;
     }
 
     public function getByName($name) {
-        $ArtistasList = $this->getAll();
-
-        foreach ($ArtistasList as $Artista) {
-            if ($Artista->nombre === $name) {
-                return $Artista;
-            }
-        }
-
-        return null;
+        $query = $this->db->prepare ('SELECT * FROM artista WHERE nombre_completo = ?') ;
+        $query->execute ([$name]);
+        $artista = $query->fetch (PDO::FETCH_OBJ) ;
+        return $artista;
     }
 }

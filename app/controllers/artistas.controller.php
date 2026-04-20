@@ -14,7 +14,7 @@ class ArtistasController {
         $this->errorView = new ErrorView();
     }
 
-    public function mostrarArtistas($name = null) {
+    public function mostrarArtista($name = null) {
         $ArtistasList = $this->model->getAll();
         
         $selectedArtista = null;
@@ -25,6 +25,6 @@ class ArtistasController {
             }
         }
 
-        $this->view->renderArtista($ArtistaList, $selectedArtista);
+        $this->view->renderArtista($ArtistasList, $selectedArtista);
     }
 }

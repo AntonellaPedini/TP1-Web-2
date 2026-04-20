@@ -27,7 +27,7 @@
                     <a class="nav-link" aria-current="page" href="home">Obras de arte</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="staff">Artistas</a>
+                    <a class="nav-link" aria-current="page" href="artista">Artistas</a>
                   </li>
                 </ul>
               </div>
