@@ -1,4 +1,4 @@
-<?php 
+<?php
 // obtengo la fecha actual
 $date = new DateTime();
 

@@ -1,7 +1,7 @@
 <?php
 class ObrasView {
     public function renderHome($obras) {
-        require_once __DIR__ . '/../../templates/header.php';
+        require_once __DIR__ . '/../../templates/layout/header.php';
         ?>
         <main class="container mt-5">
             <section class="obras">
@@ -10,14 +10,14 @@ class ObrasView {
                         <img src="<?= $obra->imagen ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?= $obra->nombre ?></h5>
-                            <a href="noticia/<?= $obra->id_obra ?>" class="btn btn-outline-primary">Leer más</a>
+                            <a href="obra/<?= $obra->id_obra ?>" class="btn btn-outline-primary">Leer más</a>
                         </div>
                     </div>
                 <?php } ?>
             </section>
         </main>
         <?php
-        require_once __DIR__ . '/../../templates/footer.php';
+        require_once __DIR__ . '/../../templates/layout/footer.php';
     }
 
     public function renderObra($obra) {

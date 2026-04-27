@@ -1,11 +1,11 @@
 .obras {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 25px;
+    grid-template-columns:2fr 2fr 2fr;
+    grid-gap: 35px;
 }
 
 .card-img-top {
-    max-height: 200px;
+    max-height: 300px;
     object-fit: cover;
 }
 
@@ -18,3 +18,5 @@
 .card-body img{
     max-width: 40%;
 }
+
+

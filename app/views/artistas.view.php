@@ -1,7 +1,7 @@
 <?php
 class ArtistasView {
     public function renderArtista($ArtistasList, $selectedArtista = null) {
-        require_once __DIR__ . '/../../templates/header.php';
+        require_once __DIR__ . '/../../templates/layout/header.php';
         ?>
         <main class="container mt-5">
             <section class="artista">
@@ -35,6 +35,6 @@ class ArtistasView {
             </section>
         </main>
         <?php
-        require_once __DIR__ . '/../../templates/footer.php';
+        require_once __DIR__ . '/../../templates/layout/footer.php';
     }
 }
