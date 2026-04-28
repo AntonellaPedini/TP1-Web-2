@@ -24,7 +24,11 @@ class ArtistasView {
                                 <div class="card-body text-center">
                                     <img src="<?= $selectedArtista->imagen ?>" class="rounded-circle mb-3" alt="Retrato o imagen del artista">
                                     <h5 class="card-title"><?= $selectedArtista->nombre_completo ?></h5>
+                                    <p class="card-text"><?= $selectedArtista->nacionalidad ?> (<?= $selectedArtista->fecha_nacimiento ?> · <?= $selectedArtista->fecha_fallecimiento ?>)</p>
                                     <p class="card-text">Corriente artística: <?= $selectedArtista->corriente_artistica ?></p>
+                                    <p class="card-text"><?= $selectedArtista->biografia ?></p>
+                                    
+                                    
                                 </div>
                             </div>
                         <?php else: ?>
