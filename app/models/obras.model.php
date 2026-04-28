@@ -25,19 +25,19 @@ class ObrasModel {
     public function insert ($nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista){
         $query = $this->db-> prepare ('INSERT INTO (`id_obra`, `nombre`, `año_creacion`, `tecnica`, `soporte`, `corriente_artistica`, `descripcion`, `imagen`, `id_artista`) VALUES (?,?, ?,?,?,?,?,?,?)');
         $query -> execute ([$nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista]);
-        return $this->db->lastInsertId ;
+        return $this->db->lastInsertId();
     }
 
     public function delete ($id){
         $query = $this->db->prepare ('DELETE FROM obras WHERE id_obra = ?') ;
         $query->execute ([$id]);
-        return $this->db->rowCount();
+        return $query->rowCount();
     }
 
     public function update ($nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista){
         $query = $this->db-> prepare ('UPDATE obra SET (`nombre`=?,`año_creacion`=?,`tecnica`=?,`soporte`= ?,`corriente_artistica`=?,`descripcion`=?,`imagen`=?) WHERE `id_obra`=?');
-        $query -> execute ([$nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_obra]);
-        return $this->db->rowCount();
+        $query -> execute ([$nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista]);
+        return $query->rowCount();
         
     }
     

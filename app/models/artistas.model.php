@@ -25,19 +25,19 @@ class ArtistasModel {
     public function insert ($nombre_completo, $fecha_nacimiento, $fecha_fallecimiento, $corriente, $nacionalidad, $biografia, $imagen){
         $query = $this->db-> prepare ('INSERT INTO (`id_artista`, `nombre_completo`, `fecha_nacimiento`, `fecha_fallecimiento`, `corriente`, `nacionalidad`, `biografia`, `imagen`) VALUES (?,?, ?,?,?,?,?,?)');
         $query -> execute ([$nombre_completo, $fecha_nacimiento, $fecha_fallecimiento, $corriente, $nacionalidad, $biografia, $imagen]);
-        return $this->db->lastInsertId ;
+        return $this->db->lastInsertId();
     }
 
     public function delete ($id){
         $query = $this->db->prepare ('DELETE FROM artistas WHERE id_artista = ?') ;
         $query->execute ([$id]);
-        return $this->db->rowCount();
+        return $query->rowCount();
     }
 
     public function update ($nombre_completo, $fecha_nacimiento, $fecha_fallecimiento, $corriente, $nacionalidad, $biografia, $imagen, $id_artista){
         $query = $this->db-> prepare ('UPDATE artista SET (`nombre_completo`=?,`fecha_nacimiento`=?,`fecha_fallecimiento`=?,`corriente`= ?,`nacionalidad`=?,`biografia`=?,`imagen`=?) WHERE `id_artista`=?');
         $query -> execute ([$nombre_completo, $fecha_nacimiento, $fecha_fallecimiento, $corriente, $nacionalidad, $biografia, $imagen, $id_artista]);
-        return $this->db->rowCount();
+        return $query->rowCount();
         
     }
 
