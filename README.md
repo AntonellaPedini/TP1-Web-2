@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Galería de Arte Digital
 
 ## Integrantes
