@@ -55,7 +55,7 @@ class ArtistasController {
     }
 
     public function eliminarArtista($id) {
-        $artista = $this->model->get($id);
+        $artista = $this->model->delete($id);
 
         if ($artista === null) {
             return $this->errorView->renderError("El artista no existe");
