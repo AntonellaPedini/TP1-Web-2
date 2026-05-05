@@ -16,7 +16,10 @@ class ObrasModel {
     }
 
     public function get($id) {
-        $query = $this->db->prepare ('SELECT * FROM obras WHERE id_obra = ?') ;
+        $query = $this->db->prepare ('SELECT obras.*, artista.nombre_completo
+                                    FROM obras
+                                    JOIN artista ON obras.id_artista = artista.id_artista
+                                    WHERE obras.id_obra = ?') ;//'SELECT * FROM obras WHERE id_obra = ?'
         $query->execute ([$id]);
         $obra = $query->fetch (PDO::FETCH_OBJ) ;
         return $obra;

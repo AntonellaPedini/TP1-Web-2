@@ -1,5 +1,4 @@
 <?php
-//require_once __DIR__ . '/mock_data.php';
 
 class ArtistasModel {
     private $db;
@@ -16,8 +15,15 @@ class ArtistasModel {
     }
 
     public function getByName($name) {
-        $query = $this->db->prepare ('SELECT * FROM artista WHERE nombre_completo = ?') ;
+        $query = $this->db->prepare ('SELECT * FROM artista WHERE nombre_completo = ?');
         $query->execute ([$name]);
+        $artista = $query->fetch (PDO::FETCH_OBJ) ;
+        return $artista;
+    }
+
+    public function getById($id_artista) {
+        $query = $this->db->prepare ('SELECT * FROM artista WHERE id_artista = ?');
+        $query->execute ([$id_artista]);
         $artista = $query->fetch (PDO::FETCH_OBJ) ;
         return $artista;
     }
@@ -39,6 +45,12 @@ class ArtistasModel {
         $query -> execute ([$nombre_completo, $fecha_nacimiento, $fecha_fallecimiento, $corriente, $nacionalidad, $biografia, $imagen, $id_artista]);
         return $query->rowCount();
         
+    }
+
+    public function getObrasByArtista($id) {
+        $query = $this->db->prepare('SELECT * FROM obras WHERE id_artista = ?');
+        $query->execute([$id]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2026 a las 02:23:33
+-- Tiempo de generación: 05-05-2026 a las 02:57:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -90,7 +90,7 @@ INSERT INTO `obras` (`id_obra`, `nombre`, `año_creacion`, `tecnica`, `soporte`,
 (10, 'Hombre de Vitruvio', 1490, 'Dibujo a pluma y tinta', 'Papel', 'Renacimiento', 'Este dibujo combina arte y ciencia, explorando la anatomía y las proporciones perfectas del cuerpo humano. Representa una figura masculina desnuda inscrita en un círculo y un cuadrado, basada en las descripciones del arquitecto romano Vitruvio sobre la armonía geométrica.', 'https://content-historia.nationalgeographic.com.es/medio/2025/07/04/hombre-de-vitruvio_1496ec7c_250704111212_1280x1813.webp', 3),
 (11, 'Narciso', 1599, 'Óleo', 'Lienzo', 'Barroco', 'Representa el célebre mito griego del joven que se enamora de su propio reflejo. El reflejo en el agua es la clave narrativa: Narciso y su imagen forman un círculo casi perfecto, simbolizando el encierro del ego sobre sí mismo, la trampa del amor propio que conduce a la muerte.', 'https://upload.wikimedia.org/wikipedia/commons/7/75/Narcissus-Caravaggio_%281594-96%29.jpg', 4),
 (12, 'La Cabeza de Medusa', 1597, 'Óleo', 'Lienzo y rodela de madera de álamo', 'Barroco', 'Representa el instante preciso de la decapitación de la Gorgona, capturando su rostro en un grito de terror y sangre, pintado con un realismo dramático y claroscuro característicos del autor.', 'https://3minutosdearte.com/wp-content/uploads/2018/06/Caravaggio-Cabeza-de-Medusa-1597-e1536759112183.jpg', 4),
-(13, 'Shot Marilyns', 1964, 'Serigrafía (acrílico y tinta serigráfica)', 'Lienzo', 'Arte Pop', 'Son una serie de cinco famosas serigrafías de Andy Warhol que retratan a Marilyn Monroe, marcadas por un incidente donde la artista Dorothy Podber disparó con un revólver a cuatro de ellas en \"The Factory\". La Shot Sage Blue Marilyn se vendió en 2022 por US$195 millones, siendo una de las obras de arte más caras de la historia.', 'https://lh3.googleusercontent.com/ci/AL18g_TjQuUzfSVNmC3EkxxqN6BC6SDyiy-RQmvYuJmvDP6LV19IZWz2jFlzB7ThE_UFuFr2bXDQ0XLI', 5),
+(13, 'Shot Marilyns', 1964, 'Serigrafía (acrílico y tinta serigráfica)', 'Lienzo', 'Arte Pop', 'Son una serie de cinco famosas serigrafías de Andy Warhol que retratan a Marilyn Monroe, marcadas por un incidente donde la artista Dorothy Podber disparó con un revólver a cuatro de ellas en \"The Factory\". La Shot Sage Blue Marilyn se vendió en 2022 por US$195 millones, siendo una de las obras de arte más caras de la historia.', 'https://themarilynreport.com/wp-content/uploads/2022/03/0x0-e1647886259201.jpg', 5),
 (15, 'Mujer con sombrilla', 1875, 'Óleo', 'Tela', 'Impresionismo', 'Un retrato de Madame Monet y el pequeño hijo de la pareja, fue pintado en Argenteuil, donde la familia vivió de 1872 a 1878.\r\nCon animadas pinceladas y una composición enérgica, la pintura probablemente fue creada al exterior. Aunque su esposa —quien porta un vestido que se mueve con el viento y sostiene una bonita sombrilla verde— es el punto focal de la pieza, su entorno también tiene un rol importante en la composición. La fascinación de Monet con el mundo natural también es aparente en su tratamiento del pasto y las flores, que son meticulosamente plasmados con luz del sol y sombras. “La riqueza que alcanzo proviene de la naturaleza, mi fuente de inspiración”, afirmó Monet.', 'https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvNjJlNGVlZmVmMjZkZi5qcGciLCJyZXNpemUsODAwIl19.DOcXL3a6HvCKeKdpWB1MPtNK4RzsboKAe_ZW8hKUfQA.jpg', 1),
 (16, 'Campo de amapolas en Argenteuil', 1873, 'Óleo', 'Lienzo', 'Impresionismo', 'Al igual que Mujer con sombrilla, Campo de amapolas en Argenteuil (1873) muestra a la esposa e hijo de Monet explorando la naturaleza durante un viaje. Esta pieza también muestra el interés de Monet en los exteriores, como es evidente en el prominente campo de las amapolas y el enfoque en el paisaje.\r\nAdemás, Campo de amapolas en Argenteuil exhibe una colorida tendencia hacia incluir toques de color rojo en una composición, algo usado regularmente por los impresionistas.', 'https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvY2xhdWRlLW1vbmV0LTAzNy5qcGciLCJyZXNpemUsODAwIl19.k9e2cmE-VHte0dV49SMDwpHFD8G2SaUt2XJ1ESBVCiU.jp', 1),
 (17, 'La persistencia de la memoria', 1931, 'Óleo', 'Lienzo', 'Surrealismo', 'La imagen surge de la fascinación de Dalí por el subconsciente y las teorías de Freud sobre los sueños. El tiempo, representado por los relojes —símbolo de la razón y la precisión—, aparece aquí derretido, blando, sin autoridad. Es el tiempo tal como se experimenta en el sueño: elástico, irracional, sin medida.\r\nHay también una figura central deforme y amorfa que muchos interpretan como un autorretrato del propio Dalí durmiendo, disolviéndose en el paisaje onírico.\r\nEl propio pintor contó que la inspiración llegó de manera fulminante mientras observaba un queso camembert derritiéndose en la mesa, una tarde en que Gala había salido. En pocas horas, la obra estaba terminada.', 'https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvbnljLTItMjY4LmpwZyIsInJlc2l6ZSwyMDAwLDIwMDAiXX0.kyLjy8saXwwv-oGbJBh7X0tgXbgo4aN-d5IcAxw7A2w.jpg', 7),
@@ -111,7 +111,21 @@ INSERT INTO `obras` (`id_obra`, `nombre`, `año_creacion`, `tecnica`, `soporte`,
 (32, 'Por la mañana', 1884, 'Óleo', 'Lienzo', 'Expresionismo', 'Se trata de una pintura al óleo sobre lienzo que retrata a una joven sentada en el borde de la cama. La obra destaca por su uso de la luz matutina, marcando una etapa temprana en la carrera del artista noruego, influenciada por el realismo y el impresionismo, antes de su evolución hacia el expresionismo.\r\nEsta obra, a menudo citada en el contexto de sus primeros años de formación, muestra una aproximación más sutil a la luz y la atmósfera en comparación con sus trabajos psicológicos posteriores.', 'https://www.ttamayo.com/wp-content/uploads/2016/11/Edvard-Munch-Morning-1884-1024x956.jpg', 11),
 (33, 'Misión aérea', 1935, 'Óleo', 'Lienzo', 'Futurismo', 'La obra representa la visión desde la cabina de un avión en misión, con la perspectiva vertiginosa y dinámica característica de Crali: el horizonte inclinado, la tierra fragmentada en planos geométricos abajo, y la sensación física de velocidad y altura que coloca al espectador dentro de la aeronave.', 'https://www.cosasdearquitectos.com/wp-content/uploads/Tullio-Crali-1935-Missione-Aerea-1024x608.jpg', 12),
 (34, 'Picado sobre la ciudad', 1939, 'Óleo', 'Tela', 'Futurismo', 'La composición muestra la vista desde la cabina de un avión en picada vertical sobre una ciudad, con una perspectiva absolutamente vertiginosa que coloca al espectador en el lugar del piloto. Los edificios abajo aparecen distorsionados, escorzados al extremo, aplastados por la velocidad y el ángulo de descenso. Crali abandona la geometrización futurista y crea una obra curvilínea en la que sintetiza no solo lo que se ve, sino lo que se siente: la libertad, la velocidad, la máquina.', 'https://www.cosasdearquitectos.com/wp-content/uploads/Tullio-Crali-1939-Nose-Dive-on-the-City-768x651.jpg', 12),
-(35, 'Disturbios en la galería', 1910, 'Óleo', 'Lienzo', 'Futurismo', 'La obra muestra a espectadores frenéticos en torno a una impactante pelea entre dos mujeres —que se cree que eran prostitutas— en el famoso centro comercial cubierto de Milán, la Galleria Vittorio Emanuele II. La multitud representa a la burguesía de la época, y aparece caótica y desbordada. \r\nEjecutada en los meses inmediatamente posteriores a su firma del Manifiesto Técnico de la Pintura Futurista, Boccioni utilizó y llevó al extremo la técnica divisionista para estudiar los movimientos de la multitud y crear efectos sin precedentes de luz y dinamismo, acentuados por el uso de colores complementarios.', 'https://m.media-amazon.com/images/I/81d2QnPWo2L._AC_SX679_.jpg', 13);
+(35, 'Disturbios en la galería', 1910, 'Óleo', 'Lienzo', 'Futurismo', 'La obra muestra a espectadores frenéticos en torno a una impactante pelea entre dos mujeres —que se cree que eran prostitutas— en el famoso centro comercial cubierto de Milán, la Galleria Vittorio Emanuele II. La multitud representa a la burguesía de la época, y aparece caótica y desbordada. \r\nEjecutada en los meses inmediatamente posteriores a su firma del Manifiesto Técnico de la Pintura Futurista, Boccioni utilizó y llevó al extremo la técnica divisionista para estudiar los movimientos de la multitud y crear efectos sin precedentes de luz y dinamismo, acentuados por el uso de colores complementarios.', 'https://m.media-amazon.com/images/I/81d2QnPWo2L._AC_SX679_.jpg', 13),
+(36, 'Paisaje mediterráneo', 1952, 'Óleo', 'Lienzo', 'Cubismo', '\"Paisaje mediterráneo\" (1952/1953) de Pablo Picasso es una obra cubista que representa la costa del Mediterráneo, a menudo inspirada en Grecia o el sur de Francia. Utiliza formas fragmentadas, colores vibrantes y estructuras geométricas para capturar la arquitectura, jardines, palmeras y el mar, reflejando su pasión por la luz y el paisaje del sur.', 'https://www.todocuadros.es/cdn/shop/files/paisaje-mediterraneo-picasso-ver4.jpg', 6),
+(37, 'El sueño', 1932, 'Óleo', 'Lienzo', 'Cubismo', 'Se trata de un famoso óleo sobre lienzo (\\(130 \\times 97\\) cm) de estilo cubista y surrealista que retrata a su amante Marie-Thérèse Walter durmiendo en un sillón rojo. La obra destaca por sus formas curvilíneas, colores vibrantes y la distorsión del rostro dividido, reflejando una intensa mezcla de erotismo, ternura y sueño.', 'https://lacamaradelarte.com/wp-content/uploads/2023/08/picasso-el-sueno-1932-752x1024.jpg', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Índices para tablas volcadas
@@ -131,6 +145,12 @@ ALTER TABLE `obras`
   ADD KEY `id_artista` (`id_artista`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -144,7 +164,13 @@ ALTER TABLE `artista`
 -- AUTO_INCREMENT de la tabla `obras`
 --
 ALTER TABLE `obras`
-  MODIFY `id_obra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_obra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

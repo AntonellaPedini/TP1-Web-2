@@ -1,3 +1,13 @@
+.navbar-brand{
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container-fluid{
+    padding-left: 45%;
+    padding-top: 20px;
+}
+
 .obras {
     display: grid;
     grid-template-columns:2fr 2fr 2fr;
@@ -19,4 +29,257 @@
     max-width: 40%;
 }
 
+.obra-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+
+.obra-imagen {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    object-fit: contain;
+}
+
+.obra-contenido {
+    width: 50%;
+    padding: 2rem;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#8C8537;
+}
+
+.btn-outline-primary {
+    color: black;
+    background-color:#d4d09b ;
+    border-color: #c9c7b3;
+}
+
+.btn-outline-primary:hover{
+    color:#dbdad0;
+    border-color:#8C8537;
+    background-color: #8C8537;
+}
+
+/*ESTILO DEL LOGIN*/
+
+/* Modal contenedor */
+.modal-content {
+    border: none;
+    border-radius: 4px;
+    padding: 0 8px;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-body {
+    padding: 0 1.5rem 1.5rem;
+}
+
+/* Títulos */
+.login-title {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #6c757d;
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.login-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Inputs */
+.login-input {
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 10px 12px;
+}
+
+.login-input:focus {
+    border-color: #1a1a2e;
+    box-shadow: 0 0 0 2px rgba(26, 26, 46, 0.15);
+}
+
+/* Recordarme y olvidaste */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.login-check-label {
+    font-size: 13px;
+}
+
+.login-forgot {
+    font-size: 13px;
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.login-forgot:hover {
+    color: #1a1a2e;
+}
+
+/* Botón ingresar */
+.btn-ingresar {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border-radius: 4px;
+    padding: 13px;
+    border: none;
+    margin-bottom: 1.25rem;
+}
+
+.btn-ingresar:hover {
+    background-color: #2d2d4e;
+    color: #fff;
+}
+
+/* Registro */
+.login-register {
+    text-align: center;
+    font-size: 13px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.login-register-link {
+    color: #1a1a2e;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register-link:hover {
+    text-decoration: underline;
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*MENÚ HAMBURGUESA DESPLEGABLE*/
+
+#menuBtn {
+    position: fixed;
+    top: 12px;
+    left: 16px;
+    z-index: 1100;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#menuOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    z-index: 1200;
+}
+
+#menuLateral {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    z-index: 1300;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+}
+
+#menuLateral.abierto {
+    left: 0;
+}
+
+#menuOverlay.abierto {
+    display: block;
+}
+
+#menuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#menuHeader span {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+}
+
+#menuHeader button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+#menuLateral nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+#menuLateral nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 12px 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+#menuLateral nav a:hover {
+    background: #f5f5f5;
+}
+
+#menuLateral footer {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
 

@@ -1,7 +1,7 @@
 <?php
 class ArtistasView {
-    public function renderArtista($ArtistasList, $selectedArtista = null) {
-        require_once __DIR__ . '/../../templates/layout/header.php';
+    public function renderArtista($ArtistasList, $selectedArtista = null, $obras = []) {
+        require_once __DIR__ . '/templates/layout/header.phtml';
         ?>
         <main class="container mt-5">
             <section class="artista">
@@ -27,7 +27,16 @@ class ArtistasView {
                                     <p class="card-text"><?= $selectedArtista->nacionalidad ?> (<?= $selectedArtista->fecha_nacimiento ?> · <?= $selectedArtista->fecha_fallecimiento ?>)</p>
                                     <p class="card-text">Corriente artística: <?= $selectedArtista->corriente_artistica ?></p>
                                     <p class="card-text"><?= $selectedArtista->biografia ?></p>
-                                    
+                                    <ul>
+                                        <h5>Obras destacadas:</h5>
+                                        <?php foreach ($obras as $obra) { ?>
+                                            <li>
+                                                <a href="obraId/<?= $obra->id_obra ?>" class="text-decoration-none">
+                                                    <?= $obra->nombre ?> (<?= $obra->año_creacion ?>)
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
                                     
                                 </div>
                             </div>
@@ -39,6 +48,6 @@ class ArtistasView {
             </section>
         </main>
         <?php
-        require_once __DIR__ . '/../../templates/layout/footer.php';
+        require_once __DIR__ . '/templates/layout/footer.phtml';
     }
 }

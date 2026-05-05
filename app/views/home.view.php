@@ -1,7 +1,7 @@
 <?php
 class HomeView {
     public function renderHome($obras, $imagenesCarrusel) {
-        require_once __DIR__ . '/../../templates/layout/header.php';
+        require_once __DIR__ . '/templates/layout/header.phtml';
 
         // Mezclar aleatoriamente y tomar solo 8 imágenes
         $imagenesAleatorias = $imagenesCarrusel;
@@ -39,6 +39,6 @@ class HomeView {
         </div>
 
         <?php
-        require_once __DIR__ . '/../../templates/layout/footer.php';
+        require_once __DIR__ . '/templates/layout/footer.phtml';
     }
 }

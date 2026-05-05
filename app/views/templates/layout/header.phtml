@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <base href="<?= BASE_URL ?>">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title> Galeria de Arte Digital </title>
+</head>
+
+<body>
+
+  <!-- main header -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home">Galeria de Arte</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Botón hamburguesa -->
+    <button id="menuBtn" onclick="abrirMenu()">☰</button>
+
+    <!-- Overlay borroso -->
+    <div id="menuOverlay" onclick="cerrarMenu()"></div>
+
+    <!-- Menú lateral -->
+    <div id="menuLateral">
+      <div id="menuHeader">
+        <span>MENÚ</span>
+        <button onclick="cerrarMenu()">✕</button>
+      </div>
+      <nav>
+        <a href="home">Inicio</a>
+        <a href="obra">Obras</a>
+        <a href="artista">Artistas</a>
+      </nav>
+      <footer>GALERÍA DE ARTE © 2026</footer>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+
+          <div class="modal-body">
+
+            <h5 class="login-title">Iniciar Sesión</h5>
+            <p class="login-subtitle">Accede a tu cuenta de administrador</p>
+
+            <form>
+              <div class="mb-3">
+                <label class="form-label login-label">Correo electrónico</label>
+                <input type="email" class="form-control login-input" placeholder="tu@email.com" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label login-label">Contraseña</label>
+                <input type="password" class="form-control login-input" placeholder="**********" />
+              </div>
+
+              <div class="login-options">
+                <div class="form-check mb-0">
+                  <input class="form-check-input" type="checkbox" id="recordarme" />
+                  <label class="form-check-label login-check-label" for="recordarme">Recordarme</label>
+                </div>
+                <a href="#" class="login-forgot">¿Olvidaste tu contraseña?</a>
+              </div>
+
+              <button type="submit" class="btn btn-ingresar w-100">Ingresar</button>
+
+              <p class="login-register">
+                ¿No tienes cuenta?
+                <a href="#" class="login-register-link">Regístrate aquí</a>
+              </p>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </header>

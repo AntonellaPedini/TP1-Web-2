@@ -2,6 +2,7 @@
 require_once __DIR__ . '/app/controllers/obras.controller.php';
 require_once __DIR__ . '/app/controllers/artistas.controller.php';
 require_once __DIR__ . '/app/controllers/home.controller.php';
+require_once __DIR__ . '/app/controllers/form.controller.php';
 
 // define la base URL del sitio
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -10,7 +11,9 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
  *   /home          ->   ObrasController::home()
  *   /obras/:ID   ->   ObrasController::mostrarObra($id)
  *   /artistas        ->   ArtistasController::mostrarArtista($name = null)
- *   /artistas/:NAME   ->   ArtistasController::index($nombre_completo)
+ *   /artistas/:NAME   ->   ArtistasController::mostrarArtista($name)
+ *  /login_form             ->   FormController::mostrarFormulario()
+ *  /login                   ->   FormController::procesarLogin()
  **/
 
 // accion por default
@@ -39,6 +42,18 @@ switch ($params[0]) {
         $name = $params[1] ?? null;
         $ArtistaController = new ArtistasController();
         $ArtistaController->mostrarArtista($name);
+        break;
+    case 'obraId':
+        $id = $params[1] ?? null;
+        $obrasController = new ObrasController();
+        $obrasController->mostrarObra($id);
+        break;
+    case 'login_form':
+        
+        break;
+    case 'login':
+        $formController = new FormController();
+        $formController->procesarLogin();
         break;
     default:
         echo '404 error';
