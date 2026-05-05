@@ -7,7 +7,7 @@
 - Antonella Pedini(apedini@alumnos.exa.unicen.edu.ar)
 
 ## Temática
-Galeria de arte digital, obras de arte digitalizadas e información de los artias. 
+Galeria de arte digital, obras de arte digitalizadas e información de los artistas. 
 
 ## Descripción
 Este sitio web permite visualizar una amplia colección de arte en formato digitalizado con detalles de información del transfondo de la obra tales como un id, nombre de la obra, año de creación, técnica, soporte(material fisico/base sobre la cual está aplicada o creada la obra), corriente artistica, una imagen de la obra, y una descripción/ análisis de la misma.
