@@ -16,8 +16,6 @@ class usuariosModel{
         // 3. obtiene los resultados
         $usuarios = $query->fetchAll(PDO::FETCH_OBJ);
 
-        // var_dump($query->errorInfo());
-
         return $usuarios;
     }
 
