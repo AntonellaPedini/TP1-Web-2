@@ -75,43 +75,43 @@ class ArtistasView
             <div class="card-body">
                 <form method="POST" action="<?= BASE_URL ?>?action=<?= $action ?>">
                     <div class="mb-3">
-                        <label class="form-label">Nombre completo<span class="text-danger">*</span></label>
-                        <input required name="nombre_completo" type="text" class="form-control"
+                        <label for="nombre_completo" class="form-label">Nombre completo<span class="text-danger">*</span></label>
+                        <input required id="nombre_completo" name="nombre_completo" type="text" class="form-control"
                             value="<?= $esEdicion ? htmlspecialchars($artista->nombre_completo) : '' ?>"
                             placeholder="Nombre del/a artista">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Fecha de nacimiento <span class="text-danger">*</span></label>
-                        <input required name="fecha_nacimiento" type="text" class="form-control"
+                        <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento <span class="text-danger">*</span></label>
+                        <input required id="fecha_nacimiento" name="fecha_nacimiento" type="text" class="form-control"
                             value="<?= $esEdicion ? htmlspecialchars($artista->fecha_nacimiento) : '' ?>"
                             placeholder="Fecha de nacimiento">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Fecha de fallecimiento</label>
-                        <input name="fecha_fallecimiento" type="text" class="form-control"
+                        <label for="fecha_fallecimiento" class="form-label">Fecha de fallecimiento</label>
+                        <input id="fecha_fallecimiento" name="fecha_fallecimiento" type="text" class="form-control"
                             value="<?= $esEdicion ? htmlspecialchars($artista->fecha_fallecimiento) : '' ?>"
                             placeholder="Fecha de fallecimiento">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Corriente artística<span class="text-danger">*</span></label>
-                        <input required name="corriente_artistica" type="text" class="form-control"
+                        <label for="corriente_artistica" class="form-label">Corriente artística<span class="text-danger">*</span></label>
+                        <input required id="corriente_artistica" name="corriente_artistica" type="text" class="form-control"
                             value="<?= $esEdicion ? htmlspecialchars($artista->corriente_artistica) : '' ?>"
                             placeholder="Ingrese la corriente artística">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Nacionalidad<span class="text-danger">*</span></label>
-                        <input required name="nacionalidad" type="text" class="form-control"
+                        <label for="nacionalidad" class="form-label">Nacionalidad<span class="text-danger">*</span></label>
+                        <input required id="nacionalidad" name="nacionalidad" type="text" class="form-control"
                             value="<?= $esEdicion ? htmlspecialchars($artista->nacionalidad) : '' ?>"
                             placeholder="Ingrese la nacionalidad del artista">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Biografía<span class="text-danger">*</span></label>
-                        <textarea required name="biografia" class="form-control"
+                        <label for="biografia" class="form-label">Biografía<span class="text-danger">*</span></label>
+                        <textarea required id="biografia" name="biografia" class="form-control"
                             placeholder="Ingrese una breve biografía del artista"><?= $esEdicion ? htmlspecialchars($artista->biografia) : '' ?></textarea>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Imagen</label>
-                        <input name="imagen" type="text" class="form-control"
+                        <label for="imagen" class="form-label">Imagen</label>
+                        <input id="imagen" name="imagen" type="text" class="form-control"
                             value="<?= $esEdicion ? htmlspecialchars($artista->imagen) : '' ?>"
                             placeholder="Ingrese la URL de la imagen del artista">
                     </div>
