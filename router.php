@@ -13,19 +13,19 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
 
 /**  TABLA DE RUTEO
 * /home             ->   HomeController::home()
-* /obra             -> ObrasController::mostrarObrasTodas()
+* /obra             ->   ObrasController::mostrarObrasTodas()
 * /obras/:ID        ->   ObrasController::mostrarObra($id)
 * /artista          ->   ArtistasController::mostrarArtista($name = null)
 * /artistas/:NAME   ->   ArtistasController::mostrarArtista($name)
 * /login_form       ->   AuthController::showForm($req)
 * /login            ->   AuthController::login($req)
-* /logout           -> AuthController::logout($req)
-* /addItem          -> ObrasController::agregarObra($req)
-* /addCategory      -> ArtistasController::agregarArtista($req)
-* /deleteItem       -> ObrasController::eliminarObra($id)
-* /deleteCategory   -> ArtistasController::eliminarArtista($id)
-* /updateItem       -> ObrasController::editarObra($id)
-* /updateCategory   ->ArtistasController::editarArtista($id_artista) /**/
+* /logout           ->   AuthController::logout($req)
+* /addItem          ->   ObrasController::agregarObra($req)
+* /addCategory      ->   ArtistasController::agregarArtista($req)
+* /deleteItem       ->   ObrasController::eliminarObra($id)
+* /deleteCategory   ->   ArtistasController::eliminarArtista($id)
+* /updateItem       ->   ObrasController::editarObra($id)
+* /updateCategory   ->   ArtistasController::editarArtista($id_artista) /**/
 
 // accion por default
 $action = 'home';
