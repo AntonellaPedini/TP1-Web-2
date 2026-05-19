@@ -7,9 +7,11 @@ class ObrasController {
     private $model;
     private $view;
     private $errorView;
+    private $artistasModel;
 
     public function __construct() {
         $this->model = new ObrasModel();
+        $this-> artistasModel = new ArtistasModel();
         $this->view = new ObrasView();
         $this->errorView = new ErrorView();
     }
@@ -34,37 +36,48 @@ class ObrasController {
 
     private function getDatosObra(){
     if (
-        !isset($_POST['nombre']) || !isset($_POST['anio']) ||
-        !isset($_POST['tecnica']) || !isset($_POST['soporte']) ||
-        !isset($_POST['corriente']) || !isset($_POST['descripcion']) || !isset($_POST['imagen']) || !isset($_POST['id_artista'])
+        empty($_POST['nombre']) ||  empty($_POST['año_creacion']) ||
+        empty($_POST['tecnica']) ||  empty($_POST['soporte']) ||
+        empty($_POST['corriente_artistica']) ||  empty($_POST['descripcion']) || empty($_POST['id_artista'])
         ){
         return null;
     }
 
     return [
         'nombre' => $_POST['nombre'],
-        'anio' => $_POST['anio'],
+        'año_creacion' => $_POST['año_creacion'],
         'tecnica' => $_POST['tecnica'],
         'soporte' => $_POST['soporte'],
-        'corriente' => $_POST['corriente'],
+        'corriente_artistica' => $_POST['corriente_artistica'],
         'descripcion' => $_POST['descripcion'],
-        'imagen' => $_POST['imagen'],
+        'imagen'        => $_POST['imagen'] ?? '',
         'id_artista' => $_POST['id_artista'],
     ];
     }
     
     public function formularioAgregarObra() {
-        $artistas = $this->model->getAll();
-        $this->view->renderAgregarObra($artistas);
+        $artistas = $this->artistasModel->getAll();
+        $this->view->renderFormularioObra($artistas);
     }
 
-    public function agregarObra (){ //ABM Agregar Items
+    public function formularioEditarObra($id) {
+        $obra = $this->model->get($id);
+
+        if ($obra === null) {
+            return $this->errorView->renderError("La obra no existe");
+        }
+
+        $artistas = $this->artistasModel->getAll();
+        $this->view->renderFormularioObra($artistas, $obra);
+    }
+
+    public function agregarObra ($req){ //ABM Agregar Items
         $datosObra = $this->getDatosObra();
         if ($datosObra === null){
             return $this->errorView->renderError("Faltan datos para agregar la obra");
         }
 
-        $id = $this->model->insert(...$datosObra);
+        $id = $this->model->insert(...array_values($datosObra));
 
         if (empty($id)) {
             return $this->errorView->renderError("No se pudo agregar la obra. Por favor, intente otra vez.");
@@ -86,6 +99,7 @@ class ObrasController {
             return $this->errorView->renderError("No se pudo eliminar la obra. Por favor, intente otra vez.");
         }
 
+        $_SESSION['message'] = "Obra eliminada exitosamente.";
         header("Location: " . BASE_URL);
     }
 
@@ -96,12 +110,15 @@ class ObrasController {
             return $this->errorView->renderError("La obra no existe");
         }
 
-        $filasActualizadas = $this->model->update(...$datosObra);
+        $datosObra[] = $id;
+
+        $filasActualizadas = $this->model->update(...array_values($datosObra));
 
         if ($filasActualizadas === 0) {
             return $this->errorView->renderError("No se pudo editar la obra. Por favor, intente otra vez.");
         }
 
+        $_SESSION['message'] = "Obra actualizada exitosamente.";
         header("Location: " . BASE_URL . "obra/" . $id);
     }
 

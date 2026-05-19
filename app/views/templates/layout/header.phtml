@@ -19,11 +19,14 @@
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="home">Galeria de Arte</a>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-            </li>
-          </ul>
-        </div>
+        </ul>
+      </div>
+      <div>
+      <?php if (isset($_SESSION['id_usuario'])): ?>
+          <a href="<?= BASE_URL ?>logout">Cerrar sesión</a>
+        <?php else: ?>
+          <a href="<?= BASE_URL ?>login_form">Iniciar sesión</a>
+        <?php endif; ?>
       </div>
     </nav>
 
@@ -44,57 +47,19 @@
         <a href="home">Inicio</a>
         <a href="obra">Obras</a>
         <a href="artista">Artistas</a>
+
+        <?php if (isset($_SESSION['id_usuario'])): ?>
+          <a href="<?= BASE_URL ?>addItem">Agregar obra</a>
+          <a href="<?= BASE_URL ?>AddCategory">Agregar artista</a>
+        <?php endif; ?>
+        
       </nav>
       <footer>GALERÍA DE ARTE © 2026</footer>
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-          <div class="modal-header">
-            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-
-          <div class="modal-body">
-
-            <h5 class="login-title">Iniciar Sesión</h5>
-            <p class="login-subtitle">Accede a tu cuenta de administrador</p>
-
-            <form>
-              <div class="mb-3">
-                <label class="form-label login-label">Correo electrónico</label>
-                <input type="email" class="form-control login-input" placeholder="tu@email.com" />
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label login-label">Contraseña</label>
-                <input type="password" class="form-control login-input" placeholder="**********" />
-              </div>
-
-              <div class="login-options">
-                <div class="form-check mb-0">
-                  <input class="form-check-input" type="checkbox" id="recordarme" />
-                  <label class="form-check-label login-check-label" for="recordarme">Recordarme</label>
-                </div>
-                <a href="#" class="login-forgot">¿Olvidaste tu contraseña?</a>
-              </div>
-
-              <button type="submit" class="btn btn-ingresar w-100">Ingresar</button>
-
-              <p class="login-register">
-                ¿No tienes cuenta?
-                <a href="#" class="login-register-link">Regístrate aquí</a>
-              </p>
-            </form>
-
-          </div>
-        </div>
-      </div>
     </div>
-
-
-
+    </div>
+    </div>
+    </div>
   </header>

@@ -25,9 +25,9 @@ class ObrasModel {
         return $obra;
     }
 
-    public function insert ($nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista){
-        $query = $this->db-> prepare ('INSERT INTO (`id_obra`, `nombre`, `año_creacion`, `tecnica`, `soporte`, `corriente_artistica`, `descripcion`, `imagen`, `id_artista`) VALUES (?,?, ?,?,?,?,?,?,?)');
-        $query -> execute ([$nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista]);
+    public function insert ($nombre, $año_creacion, $tecnica, $soporte, $corriente_artistica, $descripcion, $imagen, $id_artista){
+        $query = $this->db-> prepare ('INSERT INTO obras (`nombre`, `año_creacion`, `tecnica`, `soporte`, `corriente_artistica`, `descripcion`, `imagen`, `id_artista`) VALUES (?,?,?,?,?,?,?,?)');
+        $query -> execute ([$nombre, $año_creacion, $tecnica, $soporte, $corriente_artistica, $descripcion, $imagen, $id_artista]);
         return $this->db->lastInsertId();
     }
 
@@ -37,13 +37,11 @@ class ObrasModel {
         return $query->rowCount();
     }
 
-    public function update ($nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista){
-        $query = $this->db-> prepare ('UPDATE obra SET (`nombre`=?,`año_creacion`=?,`tecnica`=?,`soporte`= ?,`corriente_artistica`=?,`descripcion`=?,`imagen`=?) WHERE `id_obra`=?');
-        $query -> execute ([$nombre, $anio, $tecnica, $soporte, $corriente, $descripcion, $imagen, $id_artista]);
-        return $query->rowCount();
-        
+    public function update($nombre, $año_creacion, $tecnica, $soporte, $corriente_artistica, $descripcion, $imagen, $id_artista, $id_obra) {
+    $query = $this->db->prepare('UPDATE obras SET nombre=?, año_creacion=?, tecnica=?, soporte=?, corriente_artistica=?, descripcion=?, imagen=?, id_artista=? WHERE id_obra=?');
+    $query->execute([$nombre, $año_creacion, $tecnica, $soporte, $corriente_artistica, $descripcion, $imagen, $id_artista, $id_obra]);
+    return $query->rowCount();
     }
-    
 
     }
 

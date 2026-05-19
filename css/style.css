@@ -59,8 +59,17 @@ a:hover{
 
 .btn-outline-primary {
     color: black;
-    background-color:#d4d09b ;
+    background-color:#d4d09b;
     border-color: #c9c7b3;
+}
+
+.botonesObra{
+    padding: 10px;
+    border: black;
+    border-radius: 5px;
+    color: black;
+    background-color:#d4d09b;
+    border-color: #3b3702;
 }
 
 .btn-outline-primary:hover{
@@ -69,124 +78,6 @@ a:hover{
     background-color: #8C8537;
 }
 
-/*ESTILO DEL LOGIN*/
-
-/* Modal contenedor */
-.modal-content {
-    border: none;
-    border-radius: 4px;
-    padding: 0 8px;
-}
-
-.modal-header {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.modal-body {
-    padding: 0 1.5rem 1.5rem;
-}
-
-/* Títulos */
-.login-title {
-    text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 6px;
-}
-
-.login-subtitle {
-    text-align: center;
-    color: #6c757d;
-    font-size: 13px;
-    margin-bottom: 1.5rem;
-}
-
-/* Labels */
-.login-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-/* Inputs */
-.login-input {
-    border-radius: 4px;
-    font-size: 14px;
-    padding: 10px 12px;
-}
-
-.login-input:focus {
-    border-color: #1a1a2e;
-    box-shadow: 0 0 0 2px rgba(26, 26, 46, 0.15);
-}
-
-/* Recordarme y olvidaste */
-.login-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.25rem;
-}
-
-.login-check-label {
-    font-size: 13px;
-}
-
-.login-forgot {
-    font-size: 13px;
-    color: #6c757d;
-    text-decoration: none;
-}
-
-.login-forgot:hover {
-    color: #1a1a2e;
-}
-
-/* Botón ingresar */
-.btn-ingresar {
-    background-color: #1a1a2e;
-    color: #fff;
-    font-weight: 700;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    border-radius: 4px;
-    padding: 13px;
-    border: none;
-    margin-bottom: 1.25rem;
-}
-
-.btn-ingresar:hover {
-    background-color: #2d2d4e;
-    color: #fff;
-}
-
-/* Registro */
-.login-register {
-    text-align: center;
-    font-size: 13px;
-    color: #6c757d;
-    margin: 0;
-}
-
-.login-register-link {
-    color: #1a1a2e;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.login-register-link:hover {
-    text-decoration: underline;
-}
-
-.modal-backdrop.show {
-    opacity: 1;
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.4);
-}
 
 /*MENÚ HAMBURGUESA DESPLEGABLE*/
 

@@ -19,11 +19,14 @@ class ArtistasController {
         
         $selectedArtista = null;
         $obras = [];
+
         if ($name !== null) {
             $selectedArtista = $this->model->getByName($name);
-            if ($selectedArtista === null) {
+
+            if (!$selectedArtista) {
                 return $this->errorView->renderError("El artista buscado no existe");
             }
+
         $obras = $this->model->getObrasByArtista($selectedArtista->id_artista);
         }
 
@@ -32,9 +35,9 @@ class ArtistasController {
 
     private function getDatosArtista (){
         if (
-            !isset($_POST['nombre_completo']) || !isset($_POST['fecha_nacimiento']) ||
-            !isset($_POST['fecha_fallecimiento']) || !isset($_POST['corriente']) ||
-            !isset($_POST['nacionalidad']) || !isset($_POST['biografia']) || !isset($_POST['imagen'])
+            empty($_POST['nombre_completo']) || empty($_POST['fecha_nacimiento']) ||
+            empty($_POST['corriente_artistica']) ||
+            empty($_POST['nacionalidad']) || empty($_POST['biografia'])
             ){
         return null;
         }
@@ -42,15 +45,29 @@ class ArtistasController {
     return [
         'nombre_completo'    => $_POST['nombre_completo'],
         'fecha_nacimiento'   => $_POST['fecha_nacimiento'],
-        'fecha_fallecimiento'=> $_POST['fecha_fallecimiento'],
-        'corriente'          => $_POST['corriente'],
+        'fecha_fallecimiento'=> $_POST['fecha_fallecimiento'] ?? '',
+        'corriente_artistica'          => $_POST['corriente_artistica'],
         'nacionalidad'       => $_POST['nacionalidad'],
         'biografia'          => $_POST['biografia'],
-        'imagen'             => $_POST['imagen'],
+        'imagen'             => $_POST['imagen'] ?? '',
     ];
     }
 
-    public function agregarArtista (){ //ABM Agregar Categoría
+    public function formularioAgregarArtista() {
+        $this->view->renderFormularioArtistas();
+    }
+
+    public function formularioEditarArtista($id_artista){
+        $selectedArtista = $this->model->getById($id_artista);
+
+        if (!$selectedArtista) {
+            return $this->errorView->renderError("El artista no existe");
+        }
+
+        $this->view->renderFormularioArtistas($selectedArtista);
+    }
+    
+    public function agregarArtista ($req = null){ //ABM Agregar Categoría
         $datos = $this->getDatosArtista();
         if ($datos === null){
             return $this->errorView->renderError("No se pudo agregar el artista. Por favor, intente otra vez.");
@@ -58,43 +75,35 @@ class ArtistasController {
 
         $id = $this->model->insert(...$datos); //El ... antes de un array es el spread operator de PHP, que desempaqueta el array como parámetros individuales, así no tenés que pasarlos uno por uno.
 
-        header("Location: " . BASE_URL . "artistas"); //Redirige a la sección Artistas
+        header("Location: " . BASE_URL . "artista"); //Redirige a la sección Artistas
     }
 
     public function eliminarArtista($id) { //ABM Eliminar Categoría
-        $artista = $this->model->delete($id);
-
-        if ($artista === null) {
-            return $this->errorView->renderError("El artista no existe");
-        }
-
         $filasEliminadas = $this->model->delete($id);
 
         if ($filasEliminadas === 0) {
             return $this->errorView->renderError("No se pudo eliminar al artista. Por favor, intente otra vez.");
         }
 
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_URL . "artista"); //Redirige a la sección Artistas
     }
 
     public function editarArtista ($id_artista){ //ABM Editar Categoría
         $artista = $this->model->getById($id_artista);
-        if ($artista === null) {
-            return $this->errorView->renderError("El artista no existe");
+
+        if (!$artista){
+            return $this->errorView->renderError("El artista no existe.");
         }
 
         $datos = $this->getDatosArtista();
+
         if ($datos === null) {
             return $this->errorView->renderError("Faltan datos para modificar el artista. Por favor, intente otra vez");
         }
         
         $datos['id_artista'] = $id_artista; //El id_artista va dentro del array y el spread operator lo desempaqueta todo junto en el orden correcto.
-        $filasActualizadas = $this->model->update(...$datos);
+        $this->model->update(...$datos);
 
-        if ($filasActualizadas === 0) {
-            return $this->errorView->renderError("No se pudo editar la información del artista. Por favor, intente otra vez.");
-        }
-
-        header("Location: " . BASE_URL . "artista/" . $id_artista);
+        header("Location: " . BASE_URL . "?action=artista/" . urlencode($artista->nombre_completo));
     }
 }
